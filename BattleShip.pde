@@ -6,7 +6,7 @@ void setup() {
 }
 
 void draw() {
- 
+ battleShip.playerBoard.draw();
 }
 
 void mouseClicked() {
