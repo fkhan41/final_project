@@ -1,15 +1,15 @@
-Game game;
+Game battleShip;
 
 void setup() {
   size(900, 500);
-  game = new Game();
+  battleShip = new Game();
 }
 
 void draw() {
-  game.draw();
-  game.computerTurn(); 
+  battleShip.draw();
+  battleShip.computerTurn(); 
 }
 
 void mouseClicked() {
-  game.mouseClicked();
+  battleShip.mouseClicked();
 }
