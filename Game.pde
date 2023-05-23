@@ -14,7 +14,9 @@ class Game {
     gameOver = false;
   }
   
-  void addPlayerShips(Ship s1, Ship s2, Ship s3, Ship s4, Ship s5) {
+  // Add the ships, 5 at a time
+  void addPlayerShips(Ship s1, Ship s2, Ship s3, Ship s4, Ship s5, String user) {
+    if (user.equals("player")) {
     playerShips.add(s1);
     playerBoard.grid[s1.row][s1.col] = 1;
     playerShips.add(s2);
@@ -25,10 +27,8 @@ class Game {
     playerBoard.grid[s4.row][s4.col] = 1;
     playerShips.add(s5);
     playerBoard.grid[s5.row][s5.col] = 1;
-
-  }
-  
-  void addComputerShips(Ship s1, Ship s2, Ship s3, Ship s4, Ship s5) {
+    }
+    if (user.equals("computer")) {
     computerShips.add(s1);
     computerBoard.grid[s1.row][s1.col] = 1;
     computerShips.add(s2);
@@ -39,7 +39,8 @@ class Game {
     computerBoard.grid[s4.row][s4.col] = 1;
     computerShips.add(s5);
     computerBoard.grid[s5.row][s5.col] = 1;
-
+    }
   }
+  
   
 }
