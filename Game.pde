@@ -12,33 +12,19 @@ class Game {
     computerShips = new ArrayList<Ship>();
     playerTurn = true;
     gameOver = false;
+    for (Ship ship : playerShips) {
+      placeShips(playerBoard, ship);
   }
   
-  // Add the ships, 5 at a time
-  void addPlayerShips(Ship s1, Ship s2, Ship s3, Ship s4, Ship s5, String user) {
-    if (user.equals("player")) {
-    playerShips.add(s1);
-    playerBoard.grid[s1.row][s1.col] = 1;
-    playerShips.add(s2);
-    playerBoard.grid[s2.row][s2.col] = 1;
-    playerShips.add(s3);
-    playerBoard.grid[s3.row][s3.col] = 1;
-    playerShips.add(s4);
-    playerBoard.grid[s4.row][s4.col] = 1;
-    playerShips.add(s5);
-    playerBoard.grid[s5.row][s5.col] = 1;
-    }
-    if (user.equals("computer")) {
-    computerShips.add(s1);
-    computerBoard.grid[s1.row][s1.col] = 1;
-    computerShips.add(s2);
-    computerBoard.grid[s2.row][s2.col] = 1;
-    computerShips.add(s3);
-    computerBoard.grid[s3.row][s3.col] = 1;
-    computerShips.add(s4);
-    computerBoard.grid[s4.row][s4.col] = 1;
-    computerShips.add(s5);
-    computerBoard.grid[s5.row][s5.col] = 1;
+  void placeShips(Board board, Ship ship) {
+    if (ship.horizontal) {
+      for (int i = ship.col; i < ship.col + ship.length; i++) {
+        board.grid[ship.row][i] = 1;
+      }
+    } else {
+      for (int i = ship.row; i < ship.row + ship.length; i++) {
+        board.grid[i][ship.col] = 1;
+      }
     }
   }
   

@@ -17,6 +17,18 @@ class Ship {
     }
     return true;
   }
+  
+  boolean checkHit(int row, int col) {
+    if (horizontal) {
+      if (row != this.row || col < this.col || col >= this.col + length)  return false;
+      hits[col - this.col] = true;
+    } 
+    else {
+      if (col != this.col || row < this.row || row >= this.row + length) return false;
+      hits[row - this.row] = true;
+    }
+    return true;
+  }
 }
   
   
