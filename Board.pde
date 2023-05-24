@@ -7,7 +7,9 @@ class Board {
     cols = c;
     tileSize = size;
     grid = new int[r][c];
-    populate();
+    for (int i = 0; i < grid.length; i++ ) {
+      for (int j = 0; j < grid[i].length; j++) grid[i][j] = 4;
+    }
   }
   
   void drawGrid(String user) {
@@ -40,13 +42,6 @@ class Board {
     }
     
     
-    void populate() {
-      for (int i = 0; i < grid.length; i++) {
-        for (int j = 0; j < grid[i].length; j++) {
-          grid[i][j] = (int) random(5);
-        }
-      }
-    }
 }
 
 

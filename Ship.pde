@@ -20,11 +20,11 @@ class Ship {
   
   boolean checkHit(int row, int col) {
     if (horizontal) {
-      if (row != this.row || col < this.col || col >= this.col + length)  return false;
+      if (row != this.row || col < this.col || col >= this.col + len)  return false;
       hits[col - this.col] = true;
     } 
     else {
-      if (col != this.col || row < this.row || row >= this.row + length) return false;
+      if (col != this.col || row < this.row || row >= this.row + len) return false;
       hits[row - this.row] = true;
     }
     return true;

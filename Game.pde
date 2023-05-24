@@ -15,14 +15,16 @@ class Game {
     for (Ship ship : playerShips) {
       placeShips(playerBoard, ship);
   }
+  }
   
   void placeShips(Board board, Ship ship) {
     if (ship.horizontal) {
-      for (int i = ship.col; i < ship.col + ship.length; i++) {
+      for (int i = ship.col; i < ship.col + ship.len; i++) {
         board.grid[ship.row][i] = 1;
       }
-    } else {
-      for (int i = ship.row; i < ship.row + ship.length; i++) {
+    }
+    else {
+      for (int i = ship.row; i < ship.row + ship.len; i++) {
         board.grid[i][ship.col] = 1;
       }
     }
