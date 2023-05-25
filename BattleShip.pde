@@ -8,9 +8,9 @@ Ship aircraft = new Ship(8, 0, 5, false);
 
 void setup() {
   size(900, 450);
-  battleShip = new Game(15,30);
-  battleShip.playerBoard.drawGrid("player");
-  battleShip.computerBoard.drawGrid("computer");
+  battleShip = new Game(15);
+  battleShip.playerBoard.drawGrid();
+  battleShip.computerBoard.drawGrid();
 }
 
 void draw() {
