@@ -32,9 +32,3 @@ class Ship {
 }
   
   
-/*
-to-do:
-- position ships
-- add draw
-
-*/

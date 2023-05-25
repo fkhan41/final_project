@@ -6,10 +6,13 @@ class Game {
   Board playerBoard, computerBoard;
   
   public Game(int boardSize) {
-    playerBoard = new Board(boardSize, boardSize);
-    computerBoard = new Board(boardSize, boardSize);
+    // boards, ships and turns
+    playerBoard = new Board(boardSize);
+    computerBoard = new Board(boardSize);
+    
     playerShips = new ArrayList<Ship>();
     computerShips = new ArrayList<Ship>();
+    
     playerTurn = true;
     gameOver = false;
     for (Ship ship : playerShips) {
