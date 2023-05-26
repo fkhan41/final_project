@@ -7,7 +7,7 @@ class Board {
       int row = i;
       for (int j = 0; j <  size; j++) {
         int col = j;
-        grid[i][j] = new Tile(4, row++, col++); // all tiles start as water with size 30px
+        grid[i][j] = new Tile(4, row++, col++);   // all tiles start as water with size 30px
       }
     }
   }
@@ -19,6 +19,4 @@ class Board {
         }
       }
     }
-    
-    
 }
