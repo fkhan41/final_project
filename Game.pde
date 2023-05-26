@@ -5,25 +5,30 @@ class Game {
   boolean gameOver;
   Board playerBoard, computerBoard;
   
-  public Game(int boardSize, int tileSize) {
-    playerBoard = new Board(boardSize, boardSize, tileSize);
-    computerBoard = new Board(boardSize, boardSize, tileSize);
+  public Game(int boardSize) {
+    // boards, ships and turns
+    playerBoard = new Board(boardSize);
+    computerBoard = new Board(boardSize);
+    
     playerShips = new ArrayList<Ship>();
     computerShips = new ArrayList<Ship>();
+    
     playerTurn = true;
     gameOver = false;
     for (Ship ship : playerShips) {
       placeShips(playerBoard, ship);
   }
+  }
   
   void placeShips(Board board, Ship ship) {
     if (ship.horizontal) {
-      for (int i = ship.col; i < ship.col + ship.length; i++) {
-        board.grid[ship.row][i] = 1;
+      for (int i = ship.col; i < ship.col + ship.len; i++) {
+        board.grid[ship.row][i].status = 1;
       }
-    } else {
-      for (int i = ship.row; i < ship.row + ship.length; i++) {
-        board.grid[i][ship.col] = 1;
+    }
+    else {
+      for (int i = ship.row; i < ship.row + ship.len; i++) {
+        board.grid[i][ship.col].status = 1;
       }
     }
   }
