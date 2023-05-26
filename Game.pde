@@ -5,10 +5,10 @@ class Game {
   boolean gameOver;
   Board playerBoard, computerBoard;
   
-  public Game(int boardSize) {
+  public Game() {
     // boards, ships and turns
-    playerBoard = new Board(boardSize);
-    computerBoard = new Board(boardSize);
+    playerBoard = new Board(11);
+    computerBoard = new Board(11);
     
     playerShips = new ArrayList<Ship>();
     computerShips = new ArrayList<Ship>();

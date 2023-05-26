@@ -11,7 +11,7 @@ class Ship {
     hits = new boolean[l];
   }
   
-  boolean isHit() {
+  boolean isSunk() {
     for (boolean ship : hits) {
       if (!ship) return false;
     }

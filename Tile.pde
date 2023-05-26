@@ -1,6 +1,6 @@
 class Tile {
   int status, row, col;
-  final int SIZE = 30;
+  final int SIZE = 150;
 
   public Tile(int stat, int r, int c) {
     status = stat;

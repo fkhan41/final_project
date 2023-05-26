@@ -3,11 +3,10 @@ class Board {
   
   // square board
   public Board(int size) {
+    grid = new Tile[size][size];
     for (int i = 0; i < size; i++) {
-      int row = i;
-      for (int j = 0; j <  size; j++) {
-        int col = j;
-        grid[i][j] = new Tile(4, row++, col++);   // all tiles start as water with size 30px
+      for (int j = 0; j < size; j++) {
+        grid[i][j] = new Tile(4, i, j);   // all tiles start as water with size 30px
       }
     }
   }
