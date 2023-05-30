@@ -5,18 +5,19 @@ Ship tanker = new Ship(4, 0, 3, false);
 Ship submarine = new Ship(6, 0, 4, true);
 Ship aircraft = new Ship(8, 0, 5, false);
 
-
 void setup() {
   size(900,600);
-  background(0,0,255);
+ // background(0,0,255);
   noFill();
   //frame
-  stroke(300);
-  rect(20, 40, 860, 535);
-  textSize(44);
+  textSize(50);
+  strokeWeight(10);
+  line(0,100,width,100);
+  line(width/2,100,width/2,height);
   textAlign(CENTER, BOTTOM);
-  line(0, 120, width, 120);
-  text("Battleship", 450, 120);
+  text("Battleship", width/2, 80);
+  strokeWeight(1);
+
   battleShip = new Game();
   battleShip.playerBoard.drawGrid();
   battleShip.computerBoard.drawGrid();
