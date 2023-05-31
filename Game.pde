@@ -7,8 +7,8 @@ class Game {
   
   public Game() {
     // boards, ships and turns
-    playerBoard = new Board(10, 10);
-    computerBoard = new Board(11,3);
+    playerBoard = new Board(12, 10);
+    computerBoard = new Board(10,3);
     
     playerShips = new ArrayList<Ship>();
     computerShips = new ArrayList<Ship>();

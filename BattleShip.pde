@@ -13,7 +13,7 @@ void setup() {
   line(0,100,width,100);
   line(width/2,100,width/2,height);
   textAlign(CENTER, BOTTOM);
-  text("Battleship", width/2, 60);
+  text("Battleship", width/2, 80);
   strokeWeight(1);
 
   battleShip = new Game();
