@@ -13,7 +13,7 @@ class Tile {
     else if (status == 2) fill(#0CF50E); 
     else if (status == 3) fill(#F54A0C); 
     else if (status == 4) fill(#2A0CF5);  
-    square(row*SIZE,col*SIZE, SIZE);
+    square(row*SIZE, col*SIZE, SIZE);
   }
 
 }

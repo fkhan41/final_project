@@ -7,15 +7,13 @@ Ship aircraft = new Ship(8, 0, 5, false);
 
 void setup() {
   size(900,600);
- // background(0,0,255);
-  noFill();
   //frame
   textSize(50);
   strokeWeight(10);
   line(0,100,width,100);
   line(width/2,100,width/2,height);
   textAlign(CENTER, BOTTOM);
-  text("Battleship", width/2, 80);
+  text("Battleship", width/2, 60);
   strokeWeight(1);
 
   battleShip = new Game();

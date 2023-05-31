@@ -4,16 +4,16 @@ class Board {
   public Board(int sizeX, int sizeY) {
     grid = new Tile[sizeX][sizeY];
     for (int i = 0; i < sizeX; i++) {
-      for (int j = 100; j < sizeY; j++) {
+      for (int j = 0; j < sizeY; j++) {
         grid[i][j] = new Tile(4, i, j);   // all tiles start as water with size 30px
       }
     }
   }
   
   void drawGrid() {
-    for (int i = 0; i < grid.length; i++) {
-      for (int j = 0; j < grid[i].length; j++) {
-        grid[i][j].display();
+    for (Tile[] row: grid) {
+      for (Tile tile : row) {
+        tile.display();
         }
       }
     }
