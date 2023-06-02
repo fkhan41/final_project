@@ -4,8 +4,8 @@ class Board {
   public Board(int sizeX, int sizeY) {
     grid = new Tile[sizeX][sizeY];
     for (int i = 0; i < sizeX; i++) {
-      for (int j = 0; j < sizeY; j++) {
-        grid[i][j] = new Tile(4, i, j);   // all tiles start as water with size 30px
+      for (int j = 3; j < sizeY+3; j++) {
+        grid[i][j-3] = new Tile(4, i, j);   // all tiles start as water with size 30px
       }
     }
   }

@@ -7,7 +7,7 @@ class Game {
   
   public Game() {
     // boards, ships and turns
-    playerBoard = new Board(12, 10);
+    playerBoard = new Board(15, 17);
     computerBoard = new Board(10,3);
     
     playerShips = new ArrayList<Ship>();
@@ -16,19 +16,19 @@ class Game {
     playerTurn = true;
     gameOver = false;
     for (Ship ship : playerShips) {
-      placeShips(playerBoard, ship);
+      placeShip(playerBoard, ship);
   }
   }
   
-  void placeShips(Board board, Ship ship) {
+  void placeShip(Board board, Ship ship) {
     if (ship.horizontal) {
       for (int i = ship.col; i < ship.col + ship.len; i++) {
-        board.grid[ship.row][i].status = 1;
+        board.grid[ship.row][i].setStatus(1);
       }
     }
     else {
       for (int i = ship.row; i < ship.row + ship.len; i++) {
-        board.grid[i][ship.col].status = 1;
+        board.grid[i][ship.col].setStatus(1);
       }
     }
   }

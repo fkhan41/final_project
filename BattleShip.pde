@@ -1,18 +1,25 @@
 Game battleShip;
 Ship decker = new Ship(0, 0, 2, true);
-Ship destroyer = new Ship(2, 0, 3, true);
-Ship tanker = new Ship(4, 0, 3, false);
-Ship submarine = new Ship(6, 0, 4, true);
-Ship aircraft = new Ship(8, 0, 5, false);
+//Ship destroyer = new Ship(2, 0, 3, true);
+//Ship tanker = new Ship(4, 0, 3, false);
+//Ship submarine = new Ship(6, 5, 4, false);
+//Ship aircraft = new Ship(8, 9, 5, false);
 
 void setup() {
   size(900,600);
+  PImage bg = loadImage("battleship.jpg");
+  background(bg);
   //frame
-  textSize(50);
-  strokeWeight(10);
-  line(0,100,width,100);
-  line(width/2,100,width/2,height);
+  fill(0);
+  rect(250, 10, 400, 70);
+  PFont f = loadFont("font.vlw");
+  textFont(f);
+  textSize(60);
+  strokeWeight(2);
+  line(0,90,width,90);
+  line(width/2,90,width/2,height);
   textAlign(CENTER, BOTTOM);
+  fill(255);
   text("Battleship", width/2, 80);
   strokeWeight(1);
 
@@ -23,19 +30,19 @@ void setup() {
 
 void draw() {
   // add players ships
- battleShip.placeShips(battleShip.playerBoard, decker);
- battleShip.placeShips(battleShip.playerBoard, destroyer);
- battleShip.placeShips(battleShip.playerBoard, tanker);
- battleShip.placeShips(battleShip.playerBoard, submarine);
- battleShip.placeShips(battleShip.playerBoard, aircraft);
+ battleShip.placeShip(battleShip.playerBoard, decker);
+ //battleShip.placeShip(battleShip.playerBoard, destroyer);
+ //battleShip.placeShip(battleShip.playerBoard, tanker);
+ //battleShip.placeShip(battleShip.playerBoard, submarine);
+ //battleShip.placeShip(battleShip.playerBoard, aircraft);
  // add computer's ships
- battleShip.placeShips(battleShip.computerBoard, decker);
- battleShip.placeShips(battleShip.computerBoard, destroyer);
- battleShip.placeShips(battleShip.computerBoard, tanker);
- battleShip.placeShips(battleShip.computerBoard, submarine);
- battleShip.placeShips(battleShip.computerBoard, aircraft);
+/* battleShip.placeShip(battleShip.computerBoard, decker);
+ battleShip.placeShip(battleShip.computerBoard, destroyer);
+ battleShip.placeShip(battleShip.computerBoard, tanker);
+ battleShip.placeShip(battleShip.computerBoard, submarine);
+ battleShip.placeShip(battleShip.computerBoard, aircraft); */
 }
 
 void mouseClicked() {
- // battleShip.mouseClicked();
+  
 }
