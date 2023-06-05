@@ -1,7 +1,6 @@
 class Game {
   ArrayList<Ship> playerShips;
   ArrayList<Ship> computerShips;
-  boolean playerTurn;
   boolean gameOver;
   Board playerBoard, computerBoard;
   Ship Pdecker = new Ship(2, 3, 7, false);
@@ -10,15 +9,11 @@ class Game {
   Ship Psubmarine = new Ship(11, 3, 4, true);
   Ship Paircraft = new Ship(6, 9, 5, true);
   
-  void createComputerShips(ArrayList<Ship> ships) {
-    for (Ship ship : ships) {
-  Ship Cdecker = new Ship(2, 3, 7, true);`
-  Ship Cdestroyer = new Ship(15, 9, 3, false);
+  Ship Cdecker = new Ship(2, 3, 7, true);
+  Ship Cdestroyer = new Ship(12, 9, 3, true);
   Ship Ctanker = new Ship(5, 1, 6, true);
   Ship Csubmarine = new Ship(11, 3, 4, false);
   Ship Caircraft = new Ship(6, 9, 5, false);
-    }
-  }
   
   public Game() {
     // boards, ships and turns
@@ -28,7 +23,6 @@ class Game {
     playerShips = new ArrayList<Ship>();
     computerShips = new ArrayList<Ship>();
     
-    playerTurn = true;
     gameOver = false;
     playerShips.add(Pdecker);
     playerShips.add(Pdestroyer);
@@ -68,22 +62,15 @@ class Game {
     if (gameOver) {
       return;
     }
-    
-    if (playerTurn) {
-      int row = mouseY / 30;
-      int col = mouseX / 30;
-      if (playerBoard.grid[row][col].getStatus() == 1) {
-         playerBoard.grid[row][col].setStatus(2); // Mark the cell as hit            
-          }
+    int row = mouseY / 30;
+    int col = mouseX / 30;
+    Tile current = computerBoard.grid[row][col];
+     if (current.getStatus() == 1) 
+        current.setStatus(2); // Mark the cell as hit            
+     else 
+         current.setStatus(3); // Mark the cell as a miss
         
-        if (playerBoard.grid[row][col].getStatus() == 1) {
-         playerBoard.grid[row][col].setStatus(3); // Mark the cell as a miss
-        }
-        playerTurn = false;
       }
     }
   
-  
-  
-}
   
