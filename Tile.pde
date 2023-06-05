@@ -16,6 +16,10 @@ class Tile {
     square(row*SIZE, col*SIZE, SIZE);
   }
   
+  int getStatus() {
+    return status;
+  }
+  
   void setStatus(int stat) {
     this.status = stat;
   }

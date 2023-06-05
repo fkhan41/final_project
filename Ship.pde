@@ -1,13 +1,13 @@
 class Ship {
   int row, col, len;
-  boolean horizontal;
+  boolean vertical;
   boolean[] hits;
   
-  public Ship(int r, int c, int l, boolean horz) {
+  public Ship(int r, int c, int l, boolean vert) {
     row = r;
     col = c;
     len = l;
-    horizontal = horz;
+    vertical = vert;
     hits = new boolean[l];
   }
   
@@ -19,7 +19,7 @@ class Ship {
   }
   
   boolean checkHit(int row, int col) {
-    if (horizontal) {
+    if (vertical) {
       if (row != this.row || col < this.col || col >= this.col + len)  return false;
       hits[col - this.col] = true;
     } 
