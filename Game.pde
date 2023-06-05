@@ -4,30 +4,50 @@ class Game {
   boolean playerTurn;
   boolean gameOver;
   Board playerBoard, computerBoard;
-  Ship decker = new Ship(2, 3, 7, false);
-  Ship destroyer = new Ship(15, 9, 3, false);
-  Ship tanker = new Ship(5, 1, 6, false);
-  Ship submarine = new Ship(11, 3, 4, true);
-  Ship aircraft = new Ship(6, 9, 5, true);
+  Ship Pdecker = new Ship(2, 3, 7, false);
+  Ship Pdestroyer = new Ship(15, 9, 3, false);
+  Ship Ptanker = new Ship(5, 1, 6, false);
+  Ship Psubmarine = new Ship(11, 3, 4, true);
+  Ship Paircraft = new Ship(6, 9, 5, true);
+  
+  void createComputerShips(ArrayList<Ship> ships) {
+    for (Ship ship : ships) {
+  Ship Cdecker = new Ship(2, 3, 7, true);`
+  Ship Cdestroyer = new Ship(15, 9, 3, false);
+  Ship Ctanker = new Ship(5, 1, 6, true);
+  Ship Csubmarine = new Ship(11, 3, 4, false);
+  Ship Caircraft = new Ship(6, 9, 5, false);
+    }
+  }
   
   public Game() {
     // boards, ships and turns
     playerBoard = new Board(15, 17, "player");
-    computerBoard = new Board(10,3, "computer");
+    computerBoard = new Board(15,17, "computer");
     
     playerShips = new ArrayList<Ship>();
     computerShips = new ArrayList<Ship>();
     
     playerTurn = true;
     gameOver = false;
-    playerShips.add(decker);
-    playerShips.add(destroyer);
-    playerShips.add(submarine);
-    playerShips.add(tanker);
-    playerShips.add(aircraft);
+    playerShips.add(Pdecker);
+    playerShips.add(Pdestroyer);
+    playerShips.add(Psubmarine);
+    playerShips.add(Ptanker);
+    playerShips.add(Paircraft);
+    
+    computerShips.add(Cdecker);
+    computerShips.add(Cdestroyer);
+    computerShips.add(Ctanker);
+    computerShips.add(Csubmarine);
+    computerShips.add(Caircraft);
 
     for (Ship ship : playerShips) {
       placeShip(playerBoard, ship);
+  }
+  
+  for (Ship ship : computerShips) {
+      placeShip(computerBoard, ship);
   }
   }
   

@@ -1,6 +1,5 @@
 Game battleShip;
 
-
 void setup() {
   size(900,600);
   PImage bg = loadImage("battleship.jpg");
