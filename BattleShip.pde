@@ -16,9 +16,12 @@ battleShip = new Game();
 
 void draw() {
   strokeWeight(1);
-  battleShip.playerBoard.drawGrid("player");
-  battleShip.computerBoard.drawGrid("computer");
+  battleShip.playerBoard.drawGrid();
+  battleShip.computerBoard.drawGrid();
+
   fill(0);
+      strokeWeight(5);
+      line(width/2, 0, width/2, height);
   rect(250, 10, 400, 70);
   textAlign(CENTER, BOTTOM);
   fill(255);
@@ -32,7 +35,7 @@ void draw() {
   }
      strokeWeight(5);
   line(0, 90, width, 90);  
-  strokeWeight(1);
+
 
 
 }
@@ -53,7 +56,7 @@ void mouseClicked() {
       current.setStatus(2); // Mark the cell as hit
       
       // Check if the ship is sunk
-      /*boolean shipSunk = true;
+      boolean shipSunk = true;
       for (Ship ship : battleShip.computerShips) {
         if (ship.vertical) {
           for (int i = ship.row; i < ship.row + ship.len; i++) {
@@ -72,13 +75,18 @@ void mouseClicked() {
         }
         if (shipSunk) 
           text("You sunk the ship!", mouseX, mouseY);
+        
                   
-      } */
+      } 
     } 
     else if (current.getStatus() == 4) 
       current.setStatus(3); // Mark the cell as a miss
     
   }
+  
+   int computerRow = (int) random(451) / 30; 
+      int computerCol = (int) random(451) / 30; 
+
 }
 
 

@@ -35,15 +35,24 @@ class Game {
     computerShips.add(Ctanker);
     computerShips.add(Csubmarine);
     computerShips.add(Caircraft);
+    
+     //   createComputerShips(playerShips);
+
 
     for (Ship ship : playerShips) {
       placeShip(playerBoard, ship);
     }
-
+    
     for (Ship ship : computerShips) {
       placeShip(computerBoard, ship);
     }
   }
+  
+  //void createComputerShips(ArrayList<Ship> ships) {
+  //  for (Ship ship : ships) {
+  //    computerShips.add(ship.invertShip());
+  //  }
+  //}
 
   void placeShip(Board board, Ship ship) {
     if (ship.vertical) {
@@ -69,7 +78,7 @@ class Game {
 
       Tile current = computerBoard.grid[row][col];
 
-      if (current.getStatus() == 1) {
+      if (current.getStatus() == 1 || current.getStatus() == 5) {
         current.setStatus(2); // Mark the cell as hit
 
         // Check if the ship is sunk
