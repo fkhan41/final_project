@@ -84,12 +84,41 @@ void mouseClicked() {
     
   }
   
-   int computerRow = (int) random(451) / 30; 
-      int computerCol = (int) random(451) / 30; 
+   computerMove();
+      
 
 }
 
+void computerMove() {
+  boolean hit = false;
+  int computerCol = (int) random(451) / 30; 
+      int computerRow = (int) (random(600-90) + 87) / 30; 
+      println("row: " + computerRow + " col: " + computerCol);
+      Tile currentComp = battleShip.playerBoard.grid[computerCol][computerRow];
+      if (currentComp.getStatus() == 1) {
+      currentComp.setStatus(2); // Mark the cell as hit
+      hit = true;
+      }
+      
+      else if (currentComp.getStatus() == 4) {
+      currentComp.setStatus(3); // Mark the cell as miss
+      }
+      
+      if (hit) secondMove();
+      
+}
 
+void secondMove() {
+  int computerCol = (int) random(451) / 30; 
+      int computerRow = (int) (random(600-90) + 87) / 30; 
+      Tile currentComp = battleShip.playerBoard.grid[computerCol-1][computerRow];
+      if (currentComp.getStatus() == 1) {
+      currentComp.setStatus(2);
+      }
+      else if (currentComp.getStatus() == 4) {
+      currentComp.setStatus(3); // Mark the cell as miss
+      }
+}
 
 /*
 to do:
