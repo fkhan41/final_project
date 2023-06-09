@@ -181,12 +181,3 @@ void keyPressed() {
     if (keyCode == UP) battleShip.gameOver();
   }
 }
-
-/*
-to do:
-- make ships randomly
-- mouseclicked
-- make computer moves √
-- hide computer ships, reveal when ship is sunk
-- reset
-*/
