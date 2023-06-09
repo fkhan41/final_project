@@ -15,7 +15,7 @@ class Tile {
     else if (status == 4 || status == 5) fill(#2A0CF5);
     square(row*SIZE, col*SIZE, SIZE);
   }
-  
+
   int getStatus() {
     return this.status;
   }

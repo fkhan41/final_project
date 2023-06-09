@@ -20,29 +20,24 @@ class Board {
     }
   }
 
-   void drawGrid(String user) {
-     if (user.equals("computer")) {
-    for (Tile[] row : grid) {
-      for (Tile tile : row) {
-        if (tile.status == 1) {
-        tile.setStatus(5);
+  void drawGrid(String user) {
+    if (user.equals("computer")) {
+      for (Tile[] row : grid) {
+        for (Tile tile : row) {
+          if (tile.status == 1) {
+            tile.setStatus(5);
+          }
+          tile.display();
+        }
       }
-      tile.display();
-    
     }
- }
- 
-     }
-     
-     if (user.equals("player")) {
-    for (Tile[] row : grid) {
-      for (Tile tile : row) {
-        tile.display();
+
+    if (user.equals("player")) {
+      for (Tile[] row : grid) {
+        for (Tile tile : row) {
+          tile.display();
+        }
       }
-    
     }
- }
-     
-    }
+  }
 }
-   

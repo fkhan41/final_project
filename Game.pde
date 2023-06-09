@@ -35,19 +35,19 @@ class Game {
     computerShips.add(Ctanker);
     computerShips.add(Csubmarine);
     computerShips.add(Caircraft);
-    
-     //   createComputerShips(playerShips);
+
+    //   createComputerShips(playerShips);
 
 
     for (Ship ship : playerShips) {
       placeShip(playerBoard, ship);
     }
-    
+
     for (Ship ship : computerShips) {
       placeShip(computerBoard, ship);
     }
   }
-  
+
   //void createComputerShips(ArrayList<Ship> ships) {
   //  for (Ship ship : ships) {
   //    computerShips.add(ship.invertShip());
@@ -106,9 +106,8 @@ class Game {
         current.setStatus(3); // Mark the cell as a miss
     }
   }
-  
+
   void gameOver() {
     gameOver = true;
   }
-  
 }
