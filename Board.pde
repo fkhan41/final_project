@@ -20,7 +20,21 @@ class Board {
     }
   }
 
-   void drawGrid() {
+   void drawGrid(String user) {
+     if (user.equals("computer")) {
+    for (Tile[] row : grid) {
+      for (Tile tile : row) {
+        if (tile.status == 1) {
+        tile.setStatus(5);
+      }
+      tile.display();
+    
+    }
+ }
+ 
+     }
+     
+     if (user.equals("player")) {
     for (Tile[] row : grid) {
       for (Tile tile : row) {
         tile.display();
@@ -28,6 +42,7 @@ class Board {
     
     }
  }
-      
+     
     }
+}
    

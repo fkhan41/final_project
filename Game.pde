@@ -4,9 +4,9 @@ class Game {
   boolean gameOver;
   Board playerBoard, computerBoard;
   Ship Pdecker = new Ship(2, 3, 7, false);
-  Ship Pdestroyer = new Ship(15, 9, 3, false);
+  Ship Pdestroyer = new Ship(13, 9, 3, false);
   Ship Ptanker = new Ship(5, 1, 6, false);
-  Ship Psubmarine = new Ship(11, 3, 4, true);
+  Ship Psubmarine = new Ship(10, 3, 4, true);
   Ship Paircraft = new Ship(6, 9, 5, true);
 
   Ship Cdecker = new Ship(2, 3, 7, true);
@@ -107,9 +107,8 @@ class Game {
     }
   }
   
-  void checkGame() {
-    for (Ship s: computerShips) {
-      if (s.isSunk() == false) gameOver = false;
-    }
+  void gameOver() {
+    gameOver = true;
   }
+  
 }

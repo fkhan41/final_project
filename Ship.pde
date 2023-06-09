@@ -7,6 +7,8 @@ class Ship {
     col = c;
     len = l;
     vertical = vert;
+    
+
   }
   
   
