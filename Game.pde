@@ -106,4 +106,10 @@ class Game {
         current.setStatus(3); // Mark the cell as a miss
     }
   }
+  
+  void checkGame() {
+    for (Ship s: computerShips) {
+      if (s.isSunk() == false) gameOver = false;
+    }
+  }
 }

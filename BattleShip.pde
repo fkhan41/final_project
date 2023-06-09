@@ -35,7 +35,8 @@ void draw() {
   }
      strokeWeight(5);
   line(0, 90, width, 90);  
-
+  
+  
 
 
 }
@@ -120,11 +121,15 @@ void secondMove() {
       }
 }
 
+void reset() {
+  battleShip = new Game();
+}
+
 /*
 to do:
 - make ships randomly
 - mouseclicked
-- make computer moves
+- make computer moves √
 - hide computer ships, reveal when ship is sunk
 - reset
 */

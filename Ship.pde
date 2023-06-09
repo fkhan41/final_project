@@ -9,8 +9,5 @@ class Ship {
     vertical = vert;
   }
   
-  Ship invertShip() {
-    Ship result = new Ship(this.row, this.col, this.len, !(this.vertical));
-    return result;
-  }
+  
 }
